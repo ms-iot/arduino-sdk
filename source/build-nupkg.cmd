@@ -28,6 +28,7 @@ md nupkg\build\native\lib
 
 set arduinoSDKSources=..\Arduino\hardware\arduino\cores\arduino
 set arduinoLibrarySources=..\Arduino\libraries
+set arduinoVariantsSources=..\Arduino\hardware\arduino\variants
 
 if not exist %arduinoSDKSources%\Print.h (
 	echo The Arduino sources are not checked out. checking them out
@@ -47,14 +48,20 @@ copy Microsoft.IoT.Arduino.SDK.nuspec nupkg /y || goto err
 copy Microsoft.IoT.Arduino.SDK.targets nupkg\build\native /y || goto err
 
 if exist (*.h) copy *.h nupkg\build\native\include /y || goto err
+copy %arduinoSDKSources%\Client.h nupkg\build\native\include /y || goto err
+copy %arduinoSDKSources%\IPAddress.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Print.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Printable.h nupkg\build\native\include /y || goto err
+copy %arduinoSDKSources%\Server.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Stream.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\WString.h nupkg\build\native\include /y || goto err
+copy %arduinoSDKSources%\Udp.h nupkg\build\native\include /y || goto err
 copy %arduinoLibrarySources%\LiquidCrystal\LiquidCrystal.h nupkg\build\native\include /y || goto err
 copy %arduinoLibrarySources%\Stepper\Stepper.h nupkg\build\native\include /y || goto err
+copy %arduinoVariantsSources%\standard\pins_arduino.h nupkg\build\native\include /y || goto err
 
 if exist (*.cpp) copy *.cpp nupkg\build\native\source /y || goto err
+copy %arduinoSDKSources%\IPAddress.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\Print.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\Stream.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\WString.cpp nupkg\build\native\source /y || goto err

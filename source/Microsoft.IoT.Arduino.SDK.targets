@@ -9,10 +9,11 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\WString.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Stream.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Print.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\IPAddress.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)\Source\LiquidCrystal.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Print.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Stepper.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Stream.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\WString.cpp" />
   </ItemGroup>
 </Project>
