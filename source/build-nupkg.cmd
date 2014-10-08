@@ -11,7 +11,7 @@ setlocal enableextensions disabledelayedexpansion
 if not (%1)==() goto GETOPTS
 
 echo Cleaning outputs
-del Microsoft.IoT.Arduino.SDK*.nupkg 2> NUL
+del Microsoft.IoT.SDKFromArduino*.nupkg 2> NUL
 rmdir /s /q nupkg 2> NUL
 
 :: if a clean was requested, exit here
@@ -44,8 +44,8 @@ if not exist %arduinoSDKSources%\Print.h (
 
 echo.
 echo Copying files into nuget package structure
-copy Microsoft.IoT.Arduino.SDK.nuspec nupkg /y || goto err
-copy Microsoft.IoT.Arduino.SDK.targets nupkg\build\native /y || goto err
+copy Microsoft.IoT.SDKFromArduino.nuspec nupkg /y || goto err
+copy Microsoft.IoT.SDKFromArduino.targets nupkg\build\native /y || goto err
 
 if exist (*.h) copy *.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Client.h nupkg\build\native\include /y || goto err
@@ -69,6 +69,7 @@ copy %arduinoLibrarySources%\LiquidCrystal\LiquidCrystal.cpp nupkg\build\native\
 copy %arduinoLibrarySources%\Stepper\Stepper.cpp nupkg\build\native\source /y || goto err
 
 copy ..\license.txt nupkg /y || goto err
+copy ..\notices.txt nupkg /y || goto err
 
 :: skip packaging step if requested
 if "%NOPACK%"=="1" goto end
@@ -79,7 +80,7 @@ IF ERRORLEVEL 1 (
     echo Please install nuget.exe from http://nuget.org
     goto err
 )
-nuget pack nupkg\Microsoft.IoT.Arduino.SDK.nuspec || goto err
+nuget pack nupkg\Microsoft.IoT.SDKFromArduino.nuspec || goto err
 
 
 :end

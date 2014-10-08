@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
-    <id>Microsoft.IoT.Arduino.SDK</id>
+    <id>Microsoft.IoT.SDKFromArduino</id>
     <version>1.0.0-alpha</version>
     <title>Arduino SDK</title>
-    <authors>Microsoft Corporation</authors>
-    <owners>Arduino, Microsoft Corporation</owners>
+    <authors>Microsoft Open Technologies, Inc.</authors>
+    <owners>Microsoft Open Technologies, Inc. </owners>
     <licenseUrl>https://github.com/arduino/Arduino/blob/master/license.txt</licenseUrl>
     <projectUrl>http://www.arduino.cc</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>The Arduino SDK contains sources implemented by the Arduino community.</description>
+    <description>The SDK From SDKFromArduino contains sources implemented by the Arduino community.</description>
     <summary>Arduino SDK</summary>
     <releaseNotes />
     <copyright>Copyright 2014</copyright>
