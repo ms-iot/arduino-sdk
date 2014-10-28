@@ -48,6 +48,7 @@ copy Microsoft.IoT.SDKFromArduino.nuspec nupkg /y || goto err
 copy Microsoft.IoT.SDKFromArduino.targets nupkg\build\native /y || goto err
 
 if exist (*.h) copy *.h nupkg\build\native\include /y || goto err
+copy %arduinoSDKSources%\binary.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Client.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\IPAddress.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Print.h nupkg\build\native\include /y || goto err
