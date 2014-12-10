@@ -55,6 +55,7 @@ copy %arduinoSDKSources%\Print.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Printable.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Server.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Stream.h nupkg\build\native\include /y || goto err
+copy %arduinoSDKSources%\WCharacter.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\WString.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Udp.h nupkg\build\native\include /y || goto err
 copy %arduinoLibrarySources%\LiquidCrystal\LiquidCrystal.h nupkg\build\native\include /y || goto err
