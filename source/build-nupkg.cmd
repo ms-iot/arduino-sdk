@@ -47,7 +47,7 @@ echo Copying files into nuget package structure
 copy Microsoft.IoT.SDKFromArduino.nuspec nupkg /y || goto err
 copy Microsoft.IoT.SDKFromArduino.targets nupkg\build\native /y || goto err
 
-if exist (*.h) copy *.h nupkg\build\native\include /y || goto err
+if exist *.h (copy *.h nupkg\build\native\include /y) || goto err
 copy %arduinoSDKSources%\binary.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Client.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\IPAddress.h nupkg\build\native\include /y || goto err
@@ -61,7 +61,7 @@ copy %arduinoLibrarySources%\LiquidCrystal\LiquidCrystal.h nupkg\build\native\in
 copy %arduinoLibrarySources%\Stepper\Stepper.h nupkg\build\native\include /y || goto err
 copy %arduinoVariantsSources%\standard\pins_arduino.h nupkg\build\native\include /y || goto err
 
-if exist (*.cpp) copy *.cpp nupkg\build\native\source /y || goto err
+if exist *.cpp (copy *.cpp nupkg\build\native\source /y) || goto err
 copy %arduinoSDKSources%\IPAddress.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\Print.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\Stream.cpp nupkg\build\native\source /y || goto err
