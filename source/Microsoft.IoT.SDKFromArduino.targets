@@ -9,11 +9,16 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\IPAddress.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\LiquidCrystal.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Print.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Stepper.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\Stream.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)\Source\WString.cpp" />
+    <ArduinoSDKSources Include="$(MSBuildThisFileDirectory)\Source\IPAddress.cpp" />
+    <ArduinoSDKSources Include="$(MSBuildThisFileDirectory)\Source\LiquidCrystal.cpp" />
+    <ArduinoSDKSources Include="$(MSBuildThisFileDirectory)\Source\Print.cpp" />
+    <ArduinoSDKSources Include="$(MSBuildThisFileDirectory)\Source\Stepper.cpp" />
+    <ArduinoSDKSources Include="$(MSBuildThisFileDirectory)\Source\Stream.cpp" />
+    <ArduinoSDKSources Include="$(MSBuildThisFileDirectory)\Source\WString.cpp" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ClCompile Include="@(ArduinoSDKSources)" />
+  </ItemGroup>
+  
 </Project>
