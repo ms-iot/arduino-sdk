@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Microsoft.IoT.SDKFromArduino</id>
-    <version>1.0.1</version>
+    <version>1.1.1</version>
     <title>Arduino SDK</title>
     <authors>Microsoft Open Technologies, Inc.</authors>
     <owners>Microsoft Open Technologies, Inc. </owners>
@@ -12,7 +12,7 @@
     <description>SDKFromArduino contains sources implemented by the Arduino community.</description>
     <summary>Arduino SDK</summary>
     <releaseNotes />
-    <copyright>Copyright 2014</copyright>
+    <copyright>Copyright 2015</copyright>
     <tags>arduino microsoft native nativepackage</tags>
   </metadata>
 </package>

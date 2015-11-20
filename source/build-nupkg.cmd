@@ -1,4 +1,4 @@
-@echo off
+@if "%echo_on%" == "" @echo off
 setlocal enableextensions disabledelayedexpansion
 
 :: Parse options
@@ -26,9 +26,8 @@ md nupkg\build\native\include
 md nupkg\build\native\source
 md nupkg\build\native\lib
 
-set arduinoSDKSources=..\Arduino\hardware\arduino\cores\arduino
+set arduinoSDKSources=..\Arduino\hardware\arduino\avr\cores\arduino
 set arduinoLibrarySources=..\Arduino\libraries
-set arduinoVariantsSources=..\Arduino\hardware\arduino\variants
 
 if not exist %arduinoSDKSources%\Print.h (
 	echo The Arduino sources are not checked out. checking them out
@@ -58,17 +57,16 @@ copy %arduinoSDKSources%\Stream.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\WCharacter.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\WString.h nupkg\build\native\include /y || goto err
 copy %arduinoSDKSources%\Udp.h nupkg\build\native\include /y || goto err
-copy %arduinoLibrarySources%\LiquidCrystal\LiquidCrystal.h nupkg\build\native\include /y || goto err
-copy %arduinoLibrarySources%\Stepper\Stepper.h nupkg\build\native\include /y || goto err
-copy %arduinoVariantsSources%\standard\pins_arduino.h nupkg\build\native\include /y || goto err
+copy %arduinoLibrarySources%\LiquidCrystal\src\LiquidCrystal.h nupkg\build\native\include /y || goto err
+copy %arduinoLibrarySources%\Stepper\src\Stepper.h nupkg\build\native\include /y || goto err
 
 if exist *.cpp (copy *.cpp nupkg\build\native\source /y) || goto err
 copy %arduinoSDKSources%\IPAddress.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\Print.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\Stream.cpp nupkg\build\native\source /y || goto err
 copy %arduinoSDKSources%\WString.cpp nupkg\build\native\source /y || goto err
-copy %arduinoLibrarySources%\LiquidCrystal\LiquidCrystal.cpp nupkg\build\native\source /y || goto err
-copy %arduinoLibrarySources%\Stepper\Stepper.cpp nupkg\build\native\source /y || goto err
+copy %arduinoLibrarySources%\LiquidCrystal\src\LiquidCrystal.cpp nupkg\build\native\source /y || goto err
+copy %arduinoLibrarySources%\Stepper\src\Stepper.cpp nupkg\build\native\source /y || goto err
 
 copy ..\license.txt nupkg /y || goto err
 copy ..\notices.txt nupkg /y || goto err
